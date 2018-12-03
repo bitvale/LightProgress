@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LightProgress">
+        <item name="android:text">@string/loading</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="light_color">@color/light_color</item>
+    </style>
+</resources>
