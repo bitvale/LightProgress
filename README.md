@@ -8,6 +8,10 @@
 
 Created this cool [Light animation](https://dribbble.com/shots/5414044-Light-II) from [Oleg Frolov](https://dribbble.com/Volorf) as android library. 
 
+<a href="https://dribbble.com/shots/5649494-Light-Loading-Progress">
+  <img alt="Design on Dribbble" src="/art/dribbble.png" width="196" height="80" hspace="15" />
+</a>
+
 USAGE
 -----
 
