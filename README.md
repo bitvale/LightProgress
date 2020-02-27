@@ -24,7 +24,7 @@ Just add LightProgress view in your layout XML and LightProgress library in your
 
 ```gradle
 dependencies {
-  implementation 'com.bitvale:lightprogress:1.0.0'
+  implementation 'com.bitvale:lightprogress:1.0.1'
 }
 ```
 

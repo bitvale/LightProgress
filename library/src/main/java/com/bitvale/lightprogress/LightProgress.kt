@@ -2,7 +2,14 @@ package com.bitvale.lightprogress
 
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffXfermode
+import android.graphics.Rect
+import android.graphics.Typeface
 import android.os.Build
 import android.text.Layout
 import android.text.StaticLayout
@@ -18,9 +25,9 @@ import androidx.core.graphics.withRotation
  * Created by Alexander Kolpakov on 11/30/2018
  */
 class LightProgress @JvmOverloads constructor(
-        context: Context,
-        attrs: AttributeSet? = null,
-        defStyleAttr: Int = 0
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
     companion object {
@@ -72,8 +79,10 @@ class LightProgress @JvmOverloads constructor(
 
     private fun retrieveAttributes(attrs: AttributeSet, defStyleAttr: Int) {
         val typedArray =
-                context.obtainStyledAttributes(attrs, R.styleable.LightProgress, defStyleAttr,
-                        R.style.LightProgress)
+            context.obtainStyledAttributes(
+                attrs, R.styleable.LightProgress, defStyleAttr,
+                R.style.LightProgress
+            )
 
         text = typedArray.getStringOrThrow(R.styleable.LightProgress_android_text)
 
@@ -160,22 +169,22 @@ class LightProgress @JvmOverloads constructor(
         return text.let {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 StaticLayout.Builder.obtain(
-                        it,
-                        0,
-                        it.length,
-                        textPaint,
-                        textPaint.measureText(it).toInt()
+                    it,
+                    0,
+                    it.length,
+                    textPaint,
+                    textPaint.measureText(it).toInt()
                 )
-                        .build()
+                    .build()
             } else {
                 StaticLayout(
-                        text,
-                        textPaint,
-                        textPaint.measureText(it).toInt(),
-                        Layout.Alignment.ALIGN_CENTER,
-                        1f,
-                        0f,
-                        true
+                    text,
+                    textPaint,
+                    textPaint.measureText(it).toInt(),
+                    Layout.Alignment.ALIGN_CENTER,
+                    1f,
+                    0f,
+                    true
                 )
             }
         }
